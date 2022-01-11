@@ -9,7 +9,11 @@ const app = express();
 app.use(bodyParser.json());
 app.use("/api", apiRoutes);
 
-var PORT = process.env.PORT || 3003;
+var PORT = process.env.PORT || 4444;
+
+app.get("/", (req, res) => {
+  res.status(200).send("Ticket Portal API Submission");
+});
 
 mongoose.connect(process.env.DB_LINK, { useNewUrlParser: true });
 mongoose.connection
