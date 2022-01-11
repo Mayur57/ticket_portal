@@ -203,8 +203,8 @@ router.post("/tickets/reset", (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
 
-  if (password.toString() !== process.env.PASSWORD.toString()) res.send("401");
-  else if (username !== process.env.ADMIN_USER) res.send("402");
+  if (password.toString() !== "1234") res.send("401");
+  else if ("user" !== process.env.ADMIN_USER) res.send("402");
   else {
     // console.log(process.env.PASSWORD, process.env.ADMIN_USER);
     Ticket.find({}, (err, data) => {
