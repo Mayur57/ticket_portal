@@ -1,0 +1,31 @@
+{
+  "name": "ticket_portal",
+  "version": "1.0.0",
+  "description": "Code for the submission of internship assignment from Authentication.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mayur57/ticket_portal.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mayur57/ticket_portal/issues"
+  },
+  "homepage": "https://github.com/Mayur57/ticket_portal#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "joi": "^14.3.1",
+    "mongodb": "^4.3.0",
+    "mongoose": "^5.13.14",
+    "mongoose-unique-validator": "^2.0.3",
+    "nodemon": "^2.0.15"
+  }
+}
