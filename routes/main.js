@@ -16,6 +16,11 @@ function revokeTicket(ticket) {
 
 // Add a user //! Working
 router.post("/user/add", (req, res) => {
+  const r = RegExp('^[0-9]')
+  if (!r.test(req.body.phone)) {
+    res.status(400).end("Invalid Phone Number")
+  }
+
   const user = new User({
     name: req.body.name,
     age: req.body.age,
@@ -31,8 +36,8 @@ router.post("/user/add", (req, res) => {
     })
     .catch((err) => {
       console.log(err);
-      console.log("Could not add user");
-      res.status(404).send("Error while adding user");
+      // console.log("Could not add user");
+      
     });
 });
 
@@ -203,8 +208,19 @@ router.post("/tickets/reset", (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
 
-  if (password.toString() !== "1234") res.send("401");
-  else if ("user" !== process.env.ADMIN_USER) res.send("402");
+  console.log(username)
+  console.log(password)
+  console.log(process.env.PASSWORD);
+  console.log(process.env.ADMIN_USER);
+
+  if (password.toString() !== "1234") {
+   res.status(400).send("Password is incorrect");
+  }
+
+  if (username.toString() !== process.env.ADMIN_USER) {
+   res.status(400).send("Username is incorrect"); 
+  }
+    
   else {
     // console.log(process.env.PASSWORD, process.env.ADMIN_USER);
     Ticket.find({}, (err, data) => {
