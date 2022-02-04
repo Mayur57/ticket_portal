@@ -1,5 +1,5 @@
 # Authenticating.com Assignment
-Submission for assignment from [Authenticating.com](https://Authentication.com) for position of SWE Intern.
+Submission for assignment from [Authenticating.com](https://Authenticating.com) for position of SWE Intern.
 
 ### Problem Statement
 To Setup a NodeJS server on EC2 to handle ticketing for a bus company. 1 bus, 40 seats. One ticket per seat.
